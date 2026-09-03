@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+
+  /* Brand colors (from logo) */
+  --color-primary: #1E1C2B;
+  --color-accent-amber: #F0AA4C;
+  --color-accent-coral: #E8593C;
+  --color-cream: #F2EEE5;
+
+  /* Neutral scale */
+  --color-gray-50: #F7F6F9;
+  --color-gray-100: #EDEBF1;
+  --color-gray-200: #D7D4DF;
+  --color-gray-300: #C2BECC;
+  --color-gray-400: #8B879A;
+  --color-gray-500: #6B677A;
+  --color-gray-600: #524F63;
+  --color-gray-700: #3D3A4E;
+  --color-gray-800: #2C293B;
+  --color-gray-900: #1E1C2B;
+
+  /* Semantic */
+  --color-success: #3FA772;
+  --color-error: #E8593C;
+  --color-warning: #F0AA4C;
+
+  /* Radius */
+  --radius-base: 0.75rem;
+  --radius-lg: 1rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-gray-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
